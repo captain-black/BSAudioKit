@@ -13,6 +13,10 @@
 		EABBF8461DDEE37400782A41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EABBF8441DDEE37400782A41 /* Main.storyboard */; };
 		EABBF8481DDEE37400782A41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EABBF8471DDEE37400782A41 /* Assets.xcassets */; };
 		EABBF84B1DDEE37400782A41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EABBF8491DDEE37400782A41 /* LaunchScreen.storyboard */; };
+		EABBF85B1DDEE50100782A41 /* BSAudioDevice+Opus.m in Sources */ = {isa = PBXBuildFile; fileRef = EABBF8541DDEE50100782A41 /* BSAudioDevice+Opus.m */; };
+		EABBF85C1DDEE50100782A41 /* BSAudioDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = EABBF8561DDEE50100782A41 /* BSAudioDevice.m */; };
+		EABBF85E1DDEE50100782A41 /* BSRingBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = EABBF85A1DDEE50100782A41 /* BSRingBuffer.m */; };
+		EABBF8601DDEE56000782A41 /* opus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EABBF85F1DDEE56000782A41 /* opus.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,13 @@
 		EABBF8471DDEE37400782A41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EABBF84A1DDEE37400782A41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EABBF84C1DDEE37400782A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EABBF8531DDEE50100782A41 /* BSAudioDevice+Opus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BSAudioDevice+Opus.h"; sourceTree = "<group>"; };
+		EABBF8541DDEE50100782A41 /* BSAudioDevice+Opus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BSAudioDevice+Opus.m"; sourceTree = "<group>"; };
+		EABBF8551DDEE50100782A41 /* BSAudioDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSAudioDevice.h; sourceTree = "<group>"; };
+		EABBF8561DDEE50100782A41 /* BSAudioDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSAudioDevice.m; sourceTree = "<group>"; };
+		EABBF8591DDEE50100782A41 /* BSRingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRingBuffer.h; sourceTree = "<group>"; };
+		EABBF85A1DDEE50100782A41 /* BSRingBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRingBuffer.m; sourceTree = "<group>"; };
+		EABBF85F1DDEE56000782A41 /* opus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opus.framework; path = BSAudioKit/opus.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EABBF8601DDEE56000782A41 /* opus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +54,7 @@
 		EABBF82F1DDEE37400782A41 = {
 			isa = PBXGroup;
 			children = (
+				EABBF85F1DDEE56000782A41 /* opus.framework */,
 				EABBF83A1DDEE37400782A41 /* BSAudioKit */,
 				EABBF8391DDEE37400782A41 /* Products */,
 			);
@@ -58,6 +71,7 @@
 		EABBF83A1DDEE37400782A41 /* BSAudioKit */ = {
 			isa = PBXGroup;
 			children = (
+				EABBF8521DDEE50100782A41 /* BSAudioKit */,
 				EABBF83E1DDEE37400782A41 /* AppDelegate.h */,
 				EABBF83F1DDEE37400782A41 /* AppDelegate.m */,
 				EABBF8411DDEE37400782A41 /* ViewController.h */,
@@ -77,6 +91,19 @@
 				EABBF83C1DDEE37400782A41 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EABBF8521DDEE50100782A41 /* BSAudioKit */ = {
+			isa = PBXGroup;
+			children = (
+				EABBF8531DDEE50100782A41 /* BSAudioDevice+Opus.h */,
+				EABBF8541DDEE50100782A41 /* BSAudioDevice+Opus.m */,
+				EABBF8551DDEE50100782A41 /* BSAudioDevice.h */,
+				EABBF8561DDEE50100782A41 /* BSAudioDevice.m */,
+				EABBF8591DDEE50100782A41 /* BSRingBuffer.h */,
+				EABBF85A1DDEE50100782A41 /* BSRingBuffer.m */,
+			);
+			path = BSAudioKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,7 +179,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EABBF8431DDEE37400782A41 /* ViewController.m in Sources */,
+				EABBF85C1DDEE50100782A41 /* BSAudioDevice.m in Sources */,
+				EABBF85E1DDEE50100782A41 /* BSRingBuffer.m in Sources */,
 				EABBF8401DDEE37400782A41 /* AppDelegate.m in Sources */,
+				EABBF85B1DDEE50100782A41 /* BSAudioDevice+Opus.m in Sources */,
 				EABBF83D1DDEE37400782A41 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +302,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L24BY49P38;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BSAudioKit",
+				);
 				INFOPLIST_FILE = BSAudioKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.captainblack.BSAudioKit;
@@ -284,6 +318,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L24BY49P38;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BSAudioKit",
+				);
 				INFOPLIST_FILE = BSAudioKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.captainblack.BSAudioKit;
